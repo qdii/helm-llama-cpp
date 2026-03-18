@@ -41,6 +41,9 @@ securityContext: {}
 service:
   type: ClusterIP
   port: 80
+  ipFamilyPolicy: SingleStack
+  ipFamilies:
+    - IPv4
 
 ingress:
   enabled: true

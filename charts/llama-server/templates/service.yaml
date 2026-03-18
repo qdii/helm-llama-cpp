@@ -5,6 +5,9 @@ metadata:
   labels:
     {{- include "llama-cpp.labels" . | nindent 4 }}
 spec:
+  ipFamilyPolicy: {{ .Values.service.ipFamilyPolicy }}
+  ipFamilies:
+    {{- toYaml .Values.service.ipFamilies | nindent 4 }}
   type: {{ .Values.service.type }}
   ports:
     - port: {{ .Values.service.port }}
