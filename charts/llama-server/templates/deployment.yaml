@@ -47,7 +47,8 @@ spec:
             - "--{{ $key }}"
               {{- end }}
           {{- end }}
-
+          env:
+            {{- toYaml .Values.env | nindent 12 }}
           ports:
             - name: http
               containerPort: {{ .Values.service.port }}
